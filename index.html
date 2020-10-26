@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> To Do App </title>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link href='styles.css' rel='stylesheet'>
+    <link href='modal.css' rel='stylesheet'>
+    <link href='tasklist.css' rel='stylesheet'>
+    <link href='tasklistPreview.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class='main'>
+        <header class='app-header'> To Do App</header>
+        <main class='app-content'>
+            <div class='left-container'>
+                <header class='tasklist-title'>Task-Lists <span class='add-tasklist'>+</span></header>
+                <div class='tasklists-container'>
+                    <ul id='tasklists'>
+
+                    </ul>
+                </div>
+            </div>
+            <div class='right-container'>
+
+                <!-- <li id='' class='task'>
+                    <input class='task-checkbox'>
+                    <input class='task-title'>
+                    <div class='task-delete'></div>
+                </li> -->
+            </div>
+        </main>
+
+        <!-- form modal to create tasklist the app -->
+        <div class='modal close' id='task-modal'>
+            <div class='modal-content'>
+                <div class='content-header'>Tasklist Details</div>
+                <form class='tasklist-form'>
+                    <div class='title-label'>
+                        <label for='task-title'>Title : </label>
+                        <input id='task-title' required>
+                    </div>
+                    <div class='description-label'>
+                        <label for='task-description'>Description:</label>
+                        <textarea id='task-description' required rows='10'></textarea>
+                    </div>
+                </form>
+                <div class='form-buttons'>
+                    <button class='submit-button common'>Create</button>
+                    <button class='cancel-button common'>Cancel</button>
+                </div>
+                <span class='close-modal'>X</span>
+            </div>
+        </div>
+        <footer class="app-footer"></footer>
+    </div>
+    <script type='module' src='./js/main.js'></script>
+</body>
+
+</html>

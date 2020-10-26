@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+.app-header{
+    height: 10vh;
+    background-color: teal;
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.app-content{
+    height: 80vh;
+    background-color: turquoise;
+    display: flex;
+}
+
+
+.right-container{
+    width:60%;
+}
+
+.app-footer{
+    height: 10vh;
+    background-color: teal;
+}

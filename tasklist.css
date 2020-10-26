@@ -1,0 +1,54 @@
+
+.left-container{
+    background-image: linear-gradient(to right,#333,#444);
+    width:40%
+}
+
+.tasklist-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 10%;
+    font-size: 20px;
+    border-bottom: 1px solid thistle;
+}
+
+.add-tasklist{
+    margin-left: 60px;
+    border-radius: 50%;
+    text-align: center;
+    border: 1px solid white;
+    width: 25px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.tasklist-li{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid white;
+}
+
+.tasklist-names{
+    background-color: inherit;
+    outline: none;
+    width: 90%;
+    color: white;
+    font-size: 22px;
+    border: 0px;
+}
+
+.tasklist-names:hover{
+    border-bottom: 1px solid white;
+}
+
+.tasklist-delete{
+    background-image: url('./delete.svg');
+    width: 25px;
+    height: 30px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}

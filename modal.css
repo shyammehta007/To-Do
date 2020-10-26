@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* background styeling for modal */
+
+.modal{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+    
+}
+
+.modal-content{
+    position: relative;
+    width: 35vh;
+    height: 50vh;
+    color: black;
+    border: 1px solid green;
+    background-image: linear-gradient(to right,rgb(219, 213, 235),rgb(140, 212, 212));
+    padding: 10px;
+    top: 20%;
+    left: 40%;
+}
+
+.open{
+    display: block;
+}
+.close{
+    display: none;
+}
+
+/* basic form styles */
+
+textarea{
+    resize: none;
+    display: block;
+}
+
+input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
+
+/* content styles */
+
+.content-header{
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid rgb(37, 31, 73);
+}
+
+.tasklist-form > div {
+    padding: 15px 5px;
+}
+
+#task-title{
+    border: 0px;
+    border-bottom: 1px solid black;
+    background-color: inherit;
+    width: 80%;
+    font-size: 18px;
+    padding-bottom: 3px;
+}
+
+#task-description{
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.completed-label{
+    text-align: center;
+}
+
+/* form button */
+
+.form-buttons{
+    border-top: 1px solid black;
+    display:flex;
+    justify-content: space-evenly;
+    padding-top: 18px
+}
+
+.common {
+    width: 30%;
+    border-radius: 10%;
+    color: white;
+    font-size: 22px;
+
+}
+.cancel-button{
+        background-color: rgb(134, 26, 26);
+}
+.submit-button{
+    background-color: rgb(38, 167, 38);
+}
+
+.close-modal{
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    cursor: pointer;
+    color: red;
+    font-size: 22px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 4px;
+    background-color: white;
+    opacity: 0.7;
+}
