@@ -26,7 +26,7 @@ document.querySelector('.submit-button').addEventListener('click', () => {
     }
 })
 
-document.querySelector('.tasklists-container').addEventListener('input', debounce((e) => {
+document.querySelector('.list-of-tasklist-container').addEventListener('input', debounce((e) => {
     const tasklistID = e.target.parentNode.id
     const title = e.target.value
     updateTasklistDetails(tasklistID, { title })
@@ -34,7 +34,7 @@ document.querySelector('.tasklists-container').addEventListener('input', debounc
     createPreview(tasklist)
 }, 500))
 
-document.querySelector('.tasklists-container').addEventListener('click', (e) => {
+document.querySelector('.list-of-tasklist-container').addEventListener('click', (e) => {
     const type = e.target.className
     if (type === 'tasklist-names') {
         const tasklistid = e.target.parentNode.id

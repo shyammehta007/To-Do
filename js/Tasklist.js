@@ -1,24 +1,25 @@
-import Task from './Task.js'
+import { toEpoch } from './utills.js'
 
-class TaskList {
+
+class TaskListDetails {
     constructor({ title, description, id }) {
         this.id = id;
         this.title = title
         this.description = description
-        this.tasks = []
+        this.tasklist = []
     }
     addTask(details) {
         const id = Date.now() + 1 // two differenciate b/w the taskList id and taskid
         const task = new Task({ id, ...details })
-        this.tasks.push(task)
+        this.tasklist.push(task)
         return id
     }
     deleteTask(id) {
-        this.tasks = this.tasks.filter((task) => !(task.id == id))
+        this.tasklist = this.tasklist.filter((task) => !(task.id == id))
     }
 
     updateTask(id, updates) {
-        this.tasks = this.tasks.map((task) => {
+        this.tasklist = this.tasklist.map((task) => {
             if (task.id == id) {
                 task.updateDetails(updates)
             }
@@ -26,16 +27,36 @@ class TaskList {
         })
     }
     updateDetails(updates) {
-        const { title, description } = updates
-        if (title) this.title = title
-        if (description) this.description = description
+        const { task } = updates
+        if (task) {
+            const { title, completed, taskImage } = updates
+            if (title) this.title = title
+            if (completed) this.completed = completed
+            if (taskImage) this.taskImage = taskImage
+            this.updatedAt = toEpoch()
+        } else {
+            const { title, description } = updates
+            if (title) this.title = title
+            if (description) this.description = description
+        }
     }
     clearUntitledTask() {
-        this.tasks = this.tasks.filter((task) => task.title !== '')
+        this.tasklist = this.tasklist.filter((task) => task.title !== '')
     }
     readTask() {
-        return this.tasks
+        return this.tasklist
     }
 }
 
-export default TaskList
+class Task {
+    constructor({ title, completed = false, id }) {
+        this.id = id
+        this.title = title
+        this.completed = completed
+        this.createdAt = toEpoch() // to save the creation time
+        this.updatedAt = toEpoch() // to save the last update time to provide the filter feature
+    }
+}
+Task.prototype.__proto__ = TaskListDetails.prototype
+
+export default TaskListDetails 

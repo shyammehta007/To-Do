@@ -1,28 +1,16 @@
 import { toEpoch } from './utills.js'
-
 //to create the basic task object
 
-class Task {
-    constructor({ title, completed = false, id }) {
-        this.id = id
-        this.title = title
-        this.completed = completed
-        this.createdAt = toEpoch() // to save the creation time
-        this.updatedAt = toEpoch() // to save the last update time to provide the filter feature
-    }
 
-    updateDetails(updates) {
-        const { title, completed, taskImage } = updates
-        if (title) this.title = title
-        if (completed) this.completed = completed
-        if (taskImage) this.taskImage = taskImage
-        this.setUpdationTime()
-    }
+// function Task({ title, completed = false, id }) {
+//     this.id = id
+//     this.title = title
+//     this.completed = completed
+//     this.createdAt = toEpoch() // to save the creation time
+//     this.updatedAt = toEpoch() // to save the last update time to provide the filter feature
+// }
 
-    setUpdationTime() {
-        this.updatedAt = toEpoch()
-    }
-}
+// Task.prototype.__proto__ = TaskListDetails.prototype
 
 export default Task
 

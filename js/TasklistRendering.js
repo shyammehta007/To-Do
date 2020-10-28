@@ -21,6 +21,6 @@ function createLIElement(details) {
 
 export function addTasklistElement(details) {
     const tasklistLIElement = createLIElement(details)
-    document.getElementById('tasklists').appendChild(tasklistLIElement)
+    document.getElementById('list-of-tasklist').appendChild(tasklistLIElement)
 }
 

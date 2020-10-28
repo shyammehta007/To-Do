@@ -14,13 +14,13 @@ function createPreviewTemplate(details) {
         const taskId = (e.target.type !== 'file') ? e.target.parentNode.id : e.target.parentNode.parentNode.id
         const completed = e.target.checked
         const tasklist = getTasklist(id)
-        tasklist.updateTask(taskId, { completed })
+        tasklist.updateTask(taskId, { completed, task: true })
         console.log(taskId)
         printDB()
         if (e.target.type === 'file') {
             const image = e.target.files[0]
             if (image) {
-                tasklist.updateTask(taskId, { taskImage: image })
+                tasklist.updateTask(taskId, { taskImage: image, task: true })
                 appendImagePreview(taskId, image)
             }
         }
@@ -35,7 +35,7 @@ function createPreviewTemplate(details) {
         const taskId = e.target.parentNode.id
         const title = e.target.value
         const tasklist = getTasklist(id)
-        tasklist.updateTask(taskId, { title })
+        tasklist.updateTask(taskId, { title, task: true })
     }, 1000))
     //task delete handler
     container.addEventListener('click', (e) => {
@@ -88,10 +88,10 @@ export function removePreviewTemplate() {
     }
 }
 
-function renderTaskList(id) {
+function renderTaskListDetailsDetails(id) {
     const tasklist = getTasklist(id)
     tasklist.clearUntitledTask()
-    const tasks = tasklist.tasks
+    const tasks = tasklist.tasklist
     const taskContainer = document.querySelector('.task-container')
     tasks.map(task => {
         const temp = createTaskElement(task)
@@ -102,7 +102,7 @@ function renderTaskList(id) {
 export function createPreview(details) {
     removePreviewTemplate()
     createPreviewTemplate(details)
-    renderTaskList(details.id)
+    renderTaskListDetailsDetails(details.id)
 }
 
 
