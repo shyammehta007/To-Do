@@ -9,8 +9,7 @@ const addTasklistButton = document.querySelector('.add-tasklist')
 addTasklistButton.addEventListener('click', () => { openModal() })
 
 // to close task-list details modal
-document.querySelector('.close-modal').addEventListener('click', closeModal)
-document.querySelector('.cancel-button').addEventListener('click', closeModal)
+document.querySelectorAll('.closemodal').forEach(ele => ele.addEventListener('click', closeModal))
 
 //create task-list
 document.querySelector('.submit-button').addEventListener('click', () => {

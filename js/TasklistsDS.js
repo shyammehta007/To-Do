@@ -5,7 +5,6 @@ let db = []
 export function createTasklist({ title, description }) {
     const id = Date.now()
     const tasklist = new Tasklist({ id, title, description })
-    console.log(db)
     db.push(tasklist)
     return id
 }

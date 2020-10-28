@@ -12,9 +12,10 @@ class Task {
     }
 
     updateDetails(updates) {
-        const { title, completed } = updates
+        const { title, completed, taskImage } = updates
         if (title) this.title = title
         if (completed) this.completed = completed
+        if (taskImage) this.taskImage = taskImage
         this.setUpdationTime()
     }
 

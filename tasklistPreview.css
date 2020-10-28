@@ -1,5 +1,5 @@
 .right-container{
-    background-color: #cea14f;
+    background-image: linear-gradient(to right,#444,#333);
 }
 
 .preview-container{
@@ -47,6 +47,7 @@
     justify-content: center;
     max-width: 100px;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .task-container{
@@ -57,9 +58,8 @@
 
 .task{
     position: relative;
-    height: 50px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     border-bottom: 1px solid white;
 }
@@ -69,21 +69,20 @@
     border: 1px solid green;
     width: 30px;
     height: 20px;
+    margin-top: 30px;
 }
 
 .task-title{
     outline: none;
     border: 0px;
-    background-color: inherit;
-    width: 90%;
-    color: white;
-    font-size: 22px;
-    padding: 3px;
+    background-image: linear-gradient(to right,rgb(189 212 208),rgb(219 234 224));;
+    margin: 5px 0px;
+    width: 87%;
+    color: black;
+    font-size: 18px;
+    padding: 5px;
 }
 
-.task-title:hover{
-    border-bottom: 1px solid white;    
-}
 
 .task-delete{
     background-image: url('./delete.svg');
@@ -91,4 +90,41 @@
     height: 30px;
     background-repeat: no-repeat;
     cursor: pointer;
+    position: absolute;
+    right: 0px;
+    top: 15px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.image-attach{
+    background-image: url('./delete.svg');
+    width: 25px;
+    height: 30px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: absolute;
+    right: 3px;
+    top: 50px;
+}
+
+.image-preview{
+    position: absolute;
+    bottom: 11px;
+    height: 100px;
+    max-width: 30%;
+    left: 29px;
+    border: 1px solid white;
+    transition: 1s transform;
+}
+
+.image-preview:hover{
+    z-index: 1 !important;
+    width: unset;
+    max-width: 50%;
+    height: unset;
+    max-height: 200px;
+    transform: scale(0.9);
 }

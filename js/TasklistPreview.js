@@ -1,5 +1,5 @@
-import { createTask, createTaskElement } from './TaskRendering.js'
-import { getTasklist } from './TasklistsDS.js'
+import { createTask, createTaskElement, appendImagePreview } from './TaskRendering.js'
+import { getTasklist, printDB } from './TasklistsDS.js'
 import { debounce } from './utills.js'
 
 function createPreviewTemplate(details) {
@@ -11,16 +11,25 @@ function createPreviewTemplate(details) {
     // task-status change handler
     container.addEventListener('change', (e) => {
         e.preventDefault()
-        const taskId = e.target.parentNode.id
+        const taskId = (e.target.type !== 'file') ? e.target.parentNode.id : e.target.parentNode.parentNode.id
         const completed = e.target.checked
         const tasklist = getTasklist(id)
         tasklist.updateTask(taskId, { completed })
+        console.log(taskId)
+        printDB()
+        if (e.target.type === 'file') {
+            const image = e.target.files[0]
+            if (image) {
+                tasklist.updateTask(taskId, { taskImage: image })
+                appendImagePreview(taskId, image)
+            }
+        }
     })
 
     //task title change handler
     container.addEventListener('input', debounce((e) => {
         e.preventDefault()
-        if (e.target.type === 'checkbox') {
+        if (!(e.target.tagName === 'TEXTAREA')) {
             return
         }
         const taskId = e.target.parentNode.id
