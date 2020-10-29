@@ -1,10 +1,9 @@
-import Tasklist from './Tasklist.js'
-
+import { TaskListDetails } from './Tasklist.js'
 let db = []
 
 export function createTasklist({ title, description }) {
     const id = Date.now()
-    const tasklist = new Tasklist({ id, title, description })
+    const tasklist = new TaskListDetails({ id, title, description })
     db.push(tasklist)
     return id
 }

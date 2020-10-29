@@ -1,6 +1,5 @@
 import { toEpoch } from './utills.js'
 
-
 class TaskListDetails {
     constructor({ title, description, id }) {
         this.id = id;
@@ -48,15 +47,16 @@ class TaskListDetails {
     }
 }
 
-class Task {
+
+class Task extends TaskListDetails {
     constructor({ title, completed = false, id }) {
-        this.id = id
-        this.title = title
+        super({ title, id })
         this.completed = completed
+        delete this.tasklist
+        delete this.description
         this.createdAt = toEpoch() // to save the creation time
         this.updatedAt = toEpoch() // to save the last update time to provide the filter feature
     }
 }
-Task.prototype.__proto__ = TaskListDetails.prototype
 
-export default TaskListDetails 
+export { TaskListDetails }

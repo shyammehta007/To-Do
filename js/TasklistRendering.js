@@ -1,4 +1,4 @@
-import { createTasklist, getTasklist, printDB, updateTasklistDetails } from './TasklistsDS.js'
+import { createTasklist } from './TasklistsDS.js'
 
 function createLIElement(details) {
     const id = createTasklist(details)

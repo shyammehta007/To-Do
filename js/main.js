@@ -1,12 +1,12 @@
 import { addTasklistElement } from './TasklistRendering.js'
 import { openModal, closeModal } from './modal.js'
 import { debounce } from './utills.js'
-import { deleteTasklist, getTasklist, updateTasklistDetails } from './TasklistsDS.js'
+import { createTasklist, deleteTasklist, getTasklist, updateTasklistDetails } from './TasklistsDS.js'
 import { createPreview, removePreviewTemplate } from './tasklistPreview.js'
 
 // to open Task-list details modal
 const addTasklistButton = document.querySelector('.add-tasklist')
-addTasklistButton.addEventListener('click', () => { openModal() })
+addTasklistButton.addEventListener('click', () => { console.log('hi'); openModal() })
 
 // to close task-list details modal
 document.querySelectorAll('.closemodal').forEach(ele => ele.addEventListener('click', closeModal))

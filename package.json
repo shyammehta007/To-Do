@@ -1,0 +1,30 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "git": "^0.1.5"
+  },
+  "devDependencies": {
+    "webpack": "^5.3.1",
+    "webpack-cli": "^4.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack ./js/main.js ./dist/main.js ",
+    "prod": "webpack ./js/main.js ./dist/main.js -p",
+    "start": "http-server -c-1",
+    "dev": "webpack --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shyammehta007/To-Do.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shyammehta007/To-Do/issues"
+  },
+  "homepage": "https://github.com/shyammehta007/To-Do#readme",
+  "description": ""
+}
